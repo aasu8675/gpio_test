@@ -7,7 +7,7 @@
 
 int main() {
     // Open the GPIO device file
-    int fd = open("/dev/gpio_driver", O_WRONLY);
+    int fd = open("/dev/buzzer_gpio", O_WRONLY);
 
     if (fd == -1) {
         perror("Error opening file");
