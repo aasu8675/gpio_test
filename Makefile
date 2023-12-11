@@ -1,11 +1,17 @@
-CC = gcc
+# Makefile for test_application
+
 SRC = test_application.c
-OUT = test_application
+OBJ = $(SRC:.c=.o)
+TARGET = test_application
 
-all: $(OUT)
+all: $(TARGET)
 
-$(OUT): $(SRC)
-	$(CC) $^ -o $@
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OUT)
+	rm -f $(TARGET) $(OBJ)
+
