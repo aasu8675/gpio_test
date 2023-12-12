@@ -39,6 +39,9 @@ int main() {
 
         // Wait for 1 second
         sleep(1);
+
+        // Reset buffer to "1"
+        buffer[0] = '1';
     }
 
     // Close the file descriptor
@@ -46,3 +49,4 @@ int main() {
 
     return 0;
 }
+
